@@ -49,3 +49,39 @@ switch (compra.toLowerCase()) {
     case "3": alert("De acuerdo, agregaremos al carrito el producto: actron 600mg."); 
     default: alert("Opción invalida."); break;
 }
+
+
+const masProductos = [
+    {id: 1, nombre: "ibuprofeno", precio: 350, mediosDePago: "debito y credito"},
+    {id: 1, nombre: "dentrifico", precio: 400, mediosDePago: "debito y credito"},
+    {id: 1, nombre: "cepillo de dientes", precio: 450, mediosDePago: "Solo debito, 10% off"},
+    {id: 1, nombre: "gel muscular", precio: 700, mediosDePago: "credito en 6 cuotas sin interes"},
+]
+
+let productos = prompt("Tenemos mas productos disponibles: ");
+let filtrados = masProductos.filter((item) => item.productos > productos);
+
+productos.filter((item) => {
+    alert(`
+    id: ${item.id}
+    nombre: ${item.nombre}
+    precio: $${item.precio}
+    mediosDePago: ${item.mediosDePago}
+    `)
+});
+
+
+
+let nombre = prompt("Ingrese el producto que desea verificar: ");
+let producto1 = producto1.find((item) => item.nombre === nombre);
+
+if (nombre) {
+   alert(`
+    id: ${item.id}
+    nombre: ${item.nombre}
+    precio: $${item.precio}
+    mediosDePago: ${item.mediosDePago}
+    `);
+} else {
+    alert(`Producto no encontrado.`)
+}
