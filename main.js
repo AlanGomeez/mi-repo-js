@@ -87,14 +87,16 @@ const productos = [
     {id: 1, nombre: "buscapina", precio: 150},
 ];
 
+// localStorage.setItem("productos", JSON.stringify(productos));
+
 const agregar = (id) => {
-    let producto = producto.find((item => item.id === id));
+//quiero encontrar(find) el item que en su id sea === igual al id que pase por parametro
+    let producto = producto.find((item) => item.id === id);
     console.log(producto);
-    // localStorage.setItem("productos", JSON.stringify(productos));
-}
+};
 
 //muestros los productos en el DOM
-productos.forEach(item => {
+productos.forEach((item) => {
     let div = document.createElement("div");
     div.innerHTML = `
         <h2>id: ${item.id}</h2>
