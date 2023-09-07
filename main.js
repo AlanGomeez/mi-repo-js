@@ -82,16 +82,16 @@
 
 const productos = [
     {id: 1, nombre: "ibuprofeno", precio: 100},
-    {id: 1, nombre: "actron", precio: 200},
-    {id: 1, nombre: "gasa", precio: 300},
-    {id: 1, nombre: "buscapina", precio: 150},
+    {id: 2, nombre: "actron", precio: 200},
+    {id: 3, nombre: "gasa", precio: 300},
+    {id: 4, nombre: "buscapina", precio: 150},
 ];
 
-// localStorage.setItem("productos", JSON.stringify(productos));
+localStorage.setItem("productos", JSON.stringify(productos));
 
 const agregar = (id) => {
 //quiero encontrar(find) el item que en su id sea === igual al id que pase por parametro
-    let producto = producto.find((item) => item.id === id);
+    let producto = productos.find((item) => item.id === id);
     console.log(producto);
 };
 
@@ -99,10 +99,12 @@ const agregar = (id) => {
 productos.forEach((item) => {
     let div = document.createElement("div");
     div.innerHTML = `
+    <div class="color">
         <h2>id: ${item.id}</h2>
         <p>nombre: ${item.nombre}</p>
         <b>$${item.precio}</b>
         <button id="boton${item.id}">Agregar</button>
+    </div>
     `;
     document.body.append(div);
 
